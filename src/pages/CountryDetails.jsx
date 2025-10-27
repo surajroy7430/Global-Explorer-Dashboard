@@ -80,12 +80,11 @@ const CountryDetails = () => {
           </Link>
         </Button>
 
-        <div className="grid lg:grid-cols-3 gap-8">
           {/* Country Info */}
-          <Card className="lg:col-span-2 shadow-lg">
+          <Card className="shadow-lg">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="w-full md:w-64 h-48 flex-shrink-0">
+                <div className="w-full md:w-80 h-60 md:h-48 flex-shrink-0">
                   <img
                     src={country.flags.svg}
                     alt={`${country.name.common} flag`}
@@ -194,7 +193,6 @@ const CountryDetails = () => {
               )}
             </CardContent>
           </Card>
-        </div>
 
         {/* Weather Section */}
         <div className="mt-8">
