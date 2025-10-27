@@ -1,13 +1,15 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ErrorMessage = ({ message = "Something went wrong", onRetry }) => {
+const ErrorMessage = ({
+  title = "Error",
+  message = "Something went wrong",
+  onRetry,
+}) => {
   return (
-    <div className="max-w-2xl mx-auto my-12">
+    <div className="max-w-2xl my-4">
       <Alert variant="destructive">
-        <AlertCircle className="h-4 w-4" />
-        <AlertTitle>Error</AlertTitle>
+        <AlertTitle>{title}</AlertTitle>
         <AlertDescription className="mt-2">{message}</AlertDescription>
       </Alert>
       {onRetry && (

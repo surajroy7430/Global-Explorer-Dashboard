@@ -38,7 +38,6 @@ const CountryDetails = () => {
           `https://restcountries.com/v3.1/alpha/${code}?fields=name,flags,capital,region,population,cca3,area,subregion,languages,currencies,borders,latlng`
         );
         const countryData = countryResponse.data;
-        console.log(countryData);
         setCountry(countryData);
 
         if (countryData) {
@@ -207,9 +206,15 @@ const CountryDetails = () => {
         <div className="mt-12">
           <h2 className="text-3xl font-bold mb-6">Latest News</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {news.slice(0, 3).map((article, index) => (
-              <NewsCard key={index} article={article} />
-            ))}
+            {news.length === 0 ? (
+              <ErrorMessage title="Not Found" message="No news data available" />
+            ) : (
+              news
+                .slice(0, 3)
+                .map((article, index) => (
+                  <NewsCard key={index} article={article} />
+                ))
+            )}
           </div>
         </div>
       </div>
